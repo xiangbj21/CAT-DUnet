@@ -85,10 +85,7 @@
           <h2 class="title is-3">Model Overview</h2>
           <img src="./utils/CATDUNET.png" class="interpolation-image" alt="Interpolate start reference image.">
           <h2 class="has-text-left">
-            (a) The overall architecture of CAT-DUnet, comprising a Unet backbone and several Feature Fusion Blocks.
-          </h2>
-          <h2 class="has-text-left">
-            (b) Single Feature Fusion Block, composed of Channel Attention, (c) Dilated Convolution Block, and (d) Time-frequency Attention Block
+            (a) The overall architecture of CAT-DUnet, comprising a Unet backbone and several Fusion Blocks. (b) Single Fusion Block, composed of Channel Attention Block, (c) Dilated Convolution Block, and (d) Time-frequency Attention Block.
           </h2>
           
         </div>
@@ -103,6 +100,9 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
           <h2 class="title is-3">Dereverberation Effects of Various Models</h2>
+          <h2 class="content">
+            Here, we showcase the dereverberation performance of the models compared in Section III-B of the paper on synthetic reverberant audio samples described in Section III-A.
+          </h2>
         </div>
       </div>
       <div class="columns is-centered has-text-centered  is-full-width">
@@ -202,7 +202,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-          <h2 class="title is-3">Model Performance on Noisy and Reverberant Samples</h2>
+          <h2 class="title is-3">Model Performance in the Presence of Noise Interference</h2>
+          <h2 class='content'>
+            Here, we showcase a collection of audio samples that exhibit both reverberation and noticeable noise, aiming to illustrate the dereverberation performance of different models in the presence of noise interference. 
+          </h2>
         </div>
       </div>
       <div class="columns is-centered has-text-centered">
@@ -301,6 +304,216 @@
 </section>
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+          <h2 class="title is-3">Ablation Experiments on Sub-modules of CAT-DUnet</h2>
+          <h2 class='content'>
+            We showcase here some results of the ablation experiments conducted in Section III-C of the paper. Each column after the 'Backbone' column in the table represents the addition of a specific module based on the previous column.
+          </h2>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <table class="table" style="background-color: transparent;">
+          <thead>
+              <tr>
+                <th align="center"><strong>RT60/s</strong></th>
+                <th align="center"><strong>Unprocessed</strong></th>
+                <th align="center"><strong>Clean</strong></th>
+                <th align="center"><strong>Backbone</strong></th>
+                <th align="center"><strong>+CA</strong></th>
+                <th align="center"><strong>+FTA</strong></th>
+                <th align="center"><strong>+DCB (Full)</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td width="12%" style="text-align: center;"><p>0.49</p></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDB1-1$PabstBrewery$0403$27$865$0_49/unprocessed.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDB1-1$PabstBrewery$0403$27$865$0_49/clean.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDB1-1$PabstBrewery$0403$27$865$0_49/1_baseUnet.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDB1-1$PabstBrewery$0403$27$865$0_49/2_CA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDB1-1$PabstBrewery$0403$27$865$0_49/3_FTA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDB1-1$PabstBrewery$0403$27$865$0_49/4_CATDUnet.wav"></audio></td>
+              </tr>
+
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>0.61</p></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR5-MDRB0-0$Single_508_1_RIR$0048$20$855$0_61/unprocessed.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR5-MDRB0-0$Single_508_1_RIR$0048$20$855$0_61/clean.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR5-MDRB0-0$Single_508_1_RIR$0048$20$855$0_61/1_baseUnet.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR5-MDRB0-0$Single_508_1_RIR$0048$20$855$0_61/2_CA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR5-MDRB0-0$Single_508_1_RIR$0048$20$855$0_61/3_FTA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR5-MDRB0-0$Single_508_1_RIR$0048$20$855$0_61/4_CATDUnet.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>0.75</p></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDM2-0$StorageTankNo7$0066$25$747$0_75/unprocessed.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDM2-0$StorageTankNo7$0066$25$747$0_75/clean.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDM2-0$StorageTankNo7$0066$25$747$0_75/1_baseUnet.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDM2-0$StorageTankNo7$0066$25$747$0_75/2_CA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDM2-0$StorageTankNo7$0066$25$747$0_75/3_FTA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR2-MMDM2-0$StorageTankNo7$0066$25$747$0_75/4_CATDUnet.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>1.21</p></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR7-FISB0-1$WarrenLectureHall2005$0074$27$655$1_21/unprocessed.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR7-FISB0-1$WarrenLectureHall2005$0074$27$655$1_21/clean.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR7-FISB0-1$WarrenLectureHall2005$0074$27$655$1_21/1_baseUnet.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR7-FISB0-1$WarrenLectureHall2005$0074$27$655$1_21/2_CA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR7-FISB0-1$WarrenLectureHall2005$0074$27$655$1_21/3_FTA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR7-FISB0-1$WarrenLectureHall2005$0074$27$655$1_21/4_CATDUnet.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>1.42</p></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR1-FDAC1-0$PacificHall$0484$22$796$1_42/unprocessed.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR1-FDAC1-0$PacificHall$0484$22$796$1_42/clean.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR1-FDAC1-0$PacificHall$0484$22$796$1_42/1_baseUnet.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR1-FDAC1-0$PacificHall$0484$22$796$1_42/2_CA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR1-FDAC1-0$PacificHall$0484$22$796$1_42/3_FTA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR1-FDAC1-0$PacificHall$0484$22$796$1_42/4_CATDUnet.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>1.53</p></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR4-MTEB0-0$JFKUnderpass$0599$25$560$1_53/unprocessed.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR4-MTEB0-0$JFKUnderpass$0599$25$560$1_53/clean.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR4-MTEB0-0$JFKUnderpass$0599$25$560$1_53/1_baseUnet.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR4-MTEB0-0$JFKUnderpass$0599$25$560$1_53/2_CA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR4-MTEB0-0$JFKUnderpass$0599$25$560$1_53/3_FTA.wav"></audio></td>
+                <td width="20%" style="text-align: center;"><audio controls=""><source src="Audio/ablation/DR4-MTEB0-0$JFKUnderpass$0599$25$560$1_53/4_CATDUnet.wav"></audio></td>
+              </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+          <h2 class="title is-3">Comparison of Loss Functions on CAT-DUnet Backbone</h2>
+          <h2 class='content'>
+            We compare here the effectiveness of the loss functions discussed in Section III-D of the paper on a CAT-DUnet backbone.
+          </h2>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <table class="table" style="background-color: transparent;">
+          <thead>
+              <tr>
+                <th align="center"><strong>RT60/s</strong></th>
+                <th align="center"><strong>Unprocessed</strong></th>
+                <th align="center"><strong>Clean</strong></th>
+                <th align="center"><strong>L1-S</strong></th>
+                <th align="center"><strong>SSIM-S</strong></th>
+                <th align="center"><strong>Mix-S</strong></th>
+                <th align="center"><strong>Mix-MS+</strong></th>
+                <th align="center"><strong>Mix-TMS</strong></th>
+                <th align="center"><strong>SISNR</strong></th>
+                <th align="center"><strong>MSTFT</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td width="12%" style="text-align: center;"><p>0.89</p></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MBWM0-0$DipwayArch$0133$27$641$0_89/unprocessed.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MBWM0-0$DipwayArch$0133$27$641$0_89/clean.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MBWM0-0$DipwayArch$0133$27$641$0_89/1_S_MAE.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MBWM0-0$DipwayArch$0133$27$641$0_89/1_S_SSIM.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MBWM0-0$DipwayArch$0133$27$641$0_89/1_S_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MBWM0-0$DipwayArch$0133$27$641$0_89/2_MS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MBWM0-0$DipwayArch$0133$27$641$0_89/3_TMS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MBWM0-0$DipwayArch$0133$27$641$0_89/SISNR.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MBWM0-0$DipwayArch$0133$27$641$0_89/multiSTFT.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>1.02</p></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR4-MJDM1-1$Single_403a_2_RIR$0307$30$643$1_02/unprocessed.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR4-MJDM1-1$Single_403a_2_RIR$0307$30$643$1_02/clean.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR4-MJDM1-1$Single_403a_2_RIR$0307$30$643$1_02/1_S_MAE.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR4-MJDM1-1$Single_403a_2_RIR$0307$30$643$1_02/1_S_SSIM.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR4-MJDM1-1$Single_403a_2_RIR$0307$30$643$1_02/1_S_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR4-MJDM1-1$Single_403a_2_RIR$0307$30$643$1_02/2_MS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR4-MJDM1-1$Single_403a_2_RIR$0307$30$643$1_02/3_TMS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR4-MJDM1-1$Single_403a_2_RIR$0307$30$643$1_02/SISNR.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR4-MJDM1-1$Single_403a_2_RIR$0307$30$643$1_02/multiSTFT.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>1.41</p></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-FPKT0-0$CarpenterCenter$0492$25$668$1_41/unprocessed.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-FPKT0-0$CarpenterCenter$0492$25$668$1_41/clean.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-FPKT0-0$CarpenterCenter$0492$25$668$1_41/1_S_MAE.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-FPKT0-0$CarpenterCenter$0492$25$668$1_41/1_S_SSIM.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-FPKT0-0$CarpenterCenter$0492$25$668$1_41/1_S_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-FPKT0-0$CarpenterCenter$0492$25$668$1_41/2_MS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-FPKT0-0$CarpenterCenter$0492$25$668$1_41/3_TMS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-FPKT0-0$CarpenterCenter$0492$25$668$1_41/SISNR.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-FPKT0-0$CarpenterCenter$0492$25$668$1_41/multiSTFT.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>1.53</p></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR1-FELC0-0$JFKUnderpass$0582$23$530$1_53/unprocessed.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR1-FELC0-0$JFKUnderpass$0582$23$530$1_53/clean.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR1-FELC0-0$JFKUnderpass$0582$23$530$1_53/1_S_MAE.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR1-FELC0-0$JFKUnderpass$0582$23$530$1_53/1_S_SSIM.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR1-FELC0-0$JFKUnderpass$0582$23$530$1_53/1_S_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR1-FELC0-0$JFKUnderpass$0582$23$530$1_53/2_MS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR1-FELC0-0$JFKUnderpass$0582$23$530$1_53/3_TMS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR1-FELC0-0$JFKUnderpass$0582$23$530$1_53/SISNR.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR1-FELC0-0$JFKUnderpass$0582$23$530$1_53/multiSTFT.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>1.58</p></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR2-MABW0-1$BatteryBenson$0227$20$480$1_58/unprocessed.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR2-MABW0-1$BatteryBenson$0227$20$480$1_58/clean.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR2-MABW0-1$BatteryBenson$0227$20$480$1_58/1_S_MAE.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR2-MABW0-1$BatteryBenson$0227$20$480$1_58/1_S_SSIM.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR2-MABW0-1$BatteryBenson$0227$20$480$1_58/1_S_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR2-MABW0-1$BatteryBenson$0227$20$480$1_58/2_MS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR2-MABW0-1$BatteryBenson$0227$20$480$1_58/3_TMS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR2-MABW0-1$BatteryBenson$0227$20$480$1_58/SISNR.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR2-MABW0-1$BatteryBenson$0227$20$480$1_58/multiSTFT.wav"></audio></td>
+              </tr>
+
+              <tr>
+                <td width="12%" style="text-align: center;"><p>1.62</p></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MJMP0-1$HopkinsDriveUnderpass$0654$20$543$1_62/unprocessed.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MJMP0-1$HopkinsDriveUnderpass$0654$20$543$1_62/clean.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MJMP0-1$HopkinsDriveUnderpass$0654$20$543$1_62/1_S_MAE.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MJMP0-1$HopkinsDriveUnderpass$0654$20$543$1_62/1_S_SSIM.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MJMP0-1$HopkinsDriveUnderpass$0654$20$543$1_62/1_S_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MJMP0-1$HopkinsDriveUnderpass$0654$20$543$1_62/2_MS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MJMP0-1$HopkinsDriveUnderpass$0654$20$543$1_62/3_TMS_Mix.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MJMP0-1$HopkinsDriveUnderpass$0654$20$543$1_62/SISNR.wav"></audio></td>
+                <td width="12%" style="text-align: center;"><audio controls=""><source src="Audio/loss/DR3-MJMP0-1$HopkinsDriveUnderpass$0654$20$543$1_62/multiSTFT.wav"></audio></td>
+              </tr>
+
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 
 <section class="hero teaser">
   <div class="container is-max-desktop is-centered has-text-centered">
@@ -313,7 +526,7 @@
             [1] T. Nakatani, T. Yoshioka, K. Kinoshita, M. Miyoshi, and B.-H. Juang, “Blind speech dereverberation with multi-channel linear prediction based on short time fourier transform representation,” in 2008 IEEE International Conference on Acoustics, Speech and Signal Processing, 2008, pp. 85–88.
           </h2>
           <h2 class="has-text-left">
-            [2] D. Leo ́n and F. Tobar, “Late reverberation suppression using u-nets,” 2021.
+            [2] D. Leon and F. Tobar, “Late reverberation suppression using u-nets,” 2021.
           </h2>
 
           <h2 class="has-text-left">
@@ -321,14 +534,16 @@
           </h2>
 
           <h2 class="has-text-left">
-            [4] J. Chen, Z. Wang, D. Tuo, Z. Wu, S. Kang, and H. Meng, “Fullsubnet+: Channel attention fullsubnet with complex spec- trograms for speech enhancement,” in ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2022, pp. 7857–7861.
+            [4] J. Chen, Z. Wang, D. Tuo, Z. Wu, S. Kang, and H. Meng, “Fullsubnet+: Channel attention fullsubnet with complex spectrograms for speech enhancement,” in ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2022, pp. 7857–7861.
           </h2>
 
           <h2 class="has-text-left">
             [5] J.-M. Lemercier, J. Richter, S. Welker, and T. Gerkmann, “Storm: A diffusion-based stochastic regeneration model for speech enhancement and dereverberation,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 31, pp. 2724–2737, 2023.
           </h2>
 
-
+          <h2 class="has-text-left">
+            [6] R. Yamamoto, E. Song, and J.-M. Kim, “Parallel wavegan: A fast waveform generation model based on generative adversarial networks with multi-resolution spectrogram,” in ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2020, pp. 6199–6203.
+          </h2>
           
         </div>
       </div>
